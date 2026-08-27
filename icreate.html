@@ -1,0 +1,646 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Rent wireless microphones, tripods, photography lights, podcast mics & phone stands in Gauteng. Same-day confirmation via WhatsApp." />
+<meta name="keywords" content="equipment rental Gauteng, podcast mic rental, wireless microphone rental, tripod rental, photography light rental South Africa" />
+
+<meta property="og:title" content="Icreate | AV & Content Gear Rental" />
+<meta property="og:description" content="Pro AV gear, rented by the day. Wireless mics, tripods, lights, podcast mics & phone stands." />
+<meta property="og:type" content="website" />
+<title>Icreate | AV & Content Gear Rental</title>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@500;600;700&family=IBM+Plex+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --ink:#17181c;
+  --panel:#1f2127;
+  --panel-light:#282a31;
+  --paper:#f5f2ec;
+  --paper-dim:#eae6dd;
+  --line:rgba(245,242,236,.12);
+  --line-dark:rgba(23,24,28,.10);
+  --signal:#ffb020;
+  --signal-deep:#d98f10;
+  --signal-glow:rgba(255,176,32,.28);
+  --ok:#5fd6a8;
+  --ok-deep:#2f9c74;
+  --text-ink:#17181c;
+  --text-dim:rgba(23,24,28,.62);
+  --on-dark:#f5f2ec;
+  --on-dark-dim:rgba(245,242,236,.60);
+  --wa:#25D366;
+  --shadow:0 4px 28px rgba(23,24,28,.10);
+  --shadow-hover:0 10px 36px rgba(23,24,28,.16);
+}
+*{margin:0;padding:0;box-sizing:border-box;}
+html{scroll-behavior:smooth;overflow-x:hidden;width:100%;}
+body{background:var(--paper);color:var(--text-ink);font-family:'IBM Plex Sans',sans-serif;overflow-x:hidden;width:100%;position:relative;}
+.mono{font-family:'IBM Plex Mono',monospace;}
+
+/* ── HEADER ── */
+header{position:sticky;top:0;z-index:500;padding:1rem 3rem;display:flex;justify-content:space-between;align-items:center;background:rgba(245,242,236,.92);backdrop-filter:blur(14px);border-bottom:1px solid var(--line-dark);}
+.brand{display:flex;align-items:center;gap:.6rem;text-decoration:none;}
+.brand-mark{width:30px;height:30px;border-radius:6px;background:var(--signal);display:flex;align-items:center;justify-content:center;font-family:'Space Grotesk',sans-serif;font-weight:700;font-size:.85rem;color:var(--ink);}
+.brand-name{font-family:'Space Grotesk',sans-serif;font-size:1.2rem;font-weight:700;color:var(--text-ink);letter-spacing:-.01em;}
+nav{display:flex;align-items:center;gap:1.8rem;}
+nav a{text-decoration:none;color:var(--text-dim);font-size:.86rem;font-weight:500;transition:color .2s;}
+nav a:hover{color:var(--text-ink);}
+.cart-btn{position:relative;background:var(--signal);border:none;border-radius:8px;padding:.6rem 1.2rem;color:var(--ink);font-family:'IBM Plex Mono',monospace;font-size:.82rem;font-weight:600;cursor:pointer;display:flex;align-items:center;gap:.55rem;transition:all .2s;box-shadow:0 2px 14px var(--signal-glow);}
+.cart-btn:hover{background:var(--signal-deep);transform:translateY(-1px);}
+.cart-count{background:var(--ink);color:var(--on-dark);font-size:.68rem;font-weight:700;border-radius:4px;width:20px;height:20px;display:flex;align-items:center;justify-content:center;}
+
+/* ── HERO ── */
+.hero{background:var(--ink);color:var(--on-dark);min-height:82vh;display:flex;align-items:center;padding:6rem 3rem;position:relative;overflow:hidden;}
+.hero::before{content:"";position:absolute;inset:0;background:
+  repeating-linear-gradient(90deg, rgba(245,242,236,.035) 0px, rgba(245,242,236,.035) 1px, transparent 1px, transparent 64px),
+  repeating-linear-gradient(0deg, rgba(245,242,236,.035) 0px, rgba(245,242,236,.035) 1px, transparent 1px, transparent 64px);
+  pointer-events:none;}
+.hero-inner{position:relative;max-width:640px;}
+.hero-eyebrow{display:inline-flex;align-items:center;gap:.55rem;flex-wrap:wrap;max-width:100%;border:1px solid rgba(255,176,32,.4);border-radius:5px;padding:.4rem .85rem;font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:500;color:var(--signal);letter-spacing:.06em;margin-bottom:1.8rem;}
+.hero-eyebrow .dot{flex-shrink:0;width:7px;height:7px;border-radius:50%;background:var(--signal);box-shadow:0 0 8px var(--signal);}
+.hero-eyebrow .etext{min-width:0;}
+.hero h1{font-family:'Space Grotesk',sans-serif;font-size:clamp(2.6rem,6.2vw,4.2rem);font-weight:700;line-height:1.06;letter-spacing:-.02em;}
+.hero h1 span{color:var(--signal);}
+.hero-sub{margin-top:1.3rem;color:var(--on-dark-dim);font-size:1.02rem;line-height:1.7;max-width:460px;}
+.hero-actions{margin-top:2.3rem;display:flex;gap:.9rem;flex-wrap:wrap;}
+.btn-primary{padding:.9rem 2rem;border-radius:8px;border:none;background:var(--signal);color:var(--ink);font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:.88rem;cursor:pointer;box-shadow:0 4px 22px var(--signal-glow);transition:all .22s;}
+.btn-primary:hover{background:#ffc352;transform:translateY(-2px);}
+.btn-ghost{padding:.9rem 2rem;border-radius:8px;border:1.5px solid rgba(245,242,236,.25);background:transparent;color:var(--on-dark);font-family:'IBM Plex Mono',monospace;font-weight:500;font-size:.88rem;cursor:pointer;transition:all .2s;}
+.btn-ghost:hover{border-color:var(--on-dark);background:rgba(245,242,236,.06);}
+.hero-stats{position:relative;margin-top:3rem;display:flex;gap:2.4rem;flex-wrap:wrap;}
+.hstat{font-family:'IBM Plex Mono',monospace;}
+.hstat b{display:block;font-size:1.4rem;color:var(--on-dark);}
+.hstat span{font-size:.72rem;color:var(--on-dark-dim);letter-spacing:.04em;}
+
+/* ── TRUST BAR ── */
+.trust-bar{background:var(--paper-dim);border-bottom:1px solid var(--line-dark);padding:1.3rem 3rem;display:flex;justify-content:center;gap:3rem;flex-wrap:wrap;}
+.trust-item{display:flex;align-items:center;gap:.55rem;color:var(--text-dim);font-size:.82rem;font-weight:500;}
+.trust-item .ti{font-size:1.05rem;}
+
+/* ── SECTIONS ── */
+.section{padding:5.5rem 3rem;}
+.section-label{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--signal-deep);margin-bottom:.5rem;}
+.section-title{font-family:'Space Grotesk',sans-serif;font-size:clamp(1.8rem,3.6vw,2.4rem);font-weight:700;letter-spacing:-.02em;margin-bottom:.4rem;}
+.section-sub{color:var(--text-dim);font-size:.92rem;margin-bottom:2.6rem;max-width:520px;}
+
+.cat-label{display:inline-flex;align-items:center;gap:.5rem;background:var(--ink);color:var(--on-dark);border-radius:6px;padding:.5rem 1rem;font-family:'IBM Plex Mono',monospace;font-size:.8rem;font-weight:600;letter-spacing:.04em;text-transform:uppercase;margin-bottom:1.4rem;margin-top:2.6rem;}
+.cat-label:first-of-type{margin-top:0;}
+
+/* ── PRODUCT GRID / ASSET TAG CARDS ── */
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(268px,1fr));gap:1.4rem;margin-bottom:1rem;}
+.product-card{background:#fff;border:1px solid var(--line-dark);border-radius:12px;overflow:hidden;box-shadow:var(--shadow);transition:all .25s;display:flex;flex-direction:column;}
+.product-card:hover{box-shadow:var(--shadow-hover);transform:translateY(-3px);}
+.tag-strip{display:flex;justify-content:space-between;align-items:center;padding:.65rem .9rem;background:var(--paper-dim);border-bottom:1px dashed var(--line-dark);}
+.tag-code{font-family:'IBM Plex Mono',monospace;font-size:.72rem;font-weight:600;color:var(--text-dim);letter-spacing:.03em;}
+.status-pill{display:flex;align-items:center;gap:.4rem;font-family:'IBM Plex Mono',monospace;font-size:.66rem;font-weight:600;letter-spacing:.02em;}
+.status-pill .sdot{width:7px;height:7px;border-radius:50%;background:var(--ok);}
+.status-pill.busy .sdot{background:var(--signal);}
+.status-pill.avail{color:var(--ok-deep);}
+.status-pill.busy{color:var(--signal-deep);}
+.product-img-wrap{height:150px;padding:14px;display:flex;align-items:center;justify-content:center;background:#fff;overflow:hidden;}
+.emoji-big{font-size:3.4rem;}
+.product-photo{width:100%;height:100%;object-fit:contain;object-position:center;display:block;}
+.product-info{padding:1.1rem 1.2rem 1.3rem;flex:1;display:flex;flex-direction:column;}
+.product-info h4{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.35rem;}
+.product-desc{color:var(--text-dim);font-size:.83rem;line-height:1.5;margin-bottom:.7rem;}
+.spec-chips{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:.9rem;}
+.chip{font-family:'IBM Plex Mono',monospace;font-size:.66rem;background:var(--paper-dim);color:var(--text-dim);padding:.25rem .55rem;border-radius:5px;}
+.rate-row{display:flex;justify-content:space-between;align-items:baseline;flex-wrap:wrap;gap:.3rem;margin-bottom:.75rem;}
+.rate{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.05rem;color:var(--text-ink);}
+.rate span{font-size:.68rem;font-weight:500;color:var(--text-dim);}
+.deposit-note{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-dim);}
+.date-row{display:flex;gap:.5rem;margin-bottom:.6rem;}
+.date-field{flex:1;min-width:0;display:flex;flex-direction:column;gap:.25rem;}
+.date-field label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text-dim);letter-spacing:.03em;text-transform:uppercase;}
+.date-field input{width:100%;min-width:0;font-family:'IBM Plex Mono',monospace;font-size:.78rem;padding:.45rem .4rem;border:1px solid var(--line-dark);border-radius:6px;color:var(--text-ink);background:#fff;}
+.avail-msg{font-family:'IBM Plex Mono',monospace;font-size:.68rem;min-height:1.1rem;margin-bottom:.5rem;}
+.avail-msg.err{color:#c14545;}
+.avail-msg.ok{color:var(--ok-deep);}
+.product-footer{display:flex;justify-content:space-between;align-items:center;margin-top:auto;}
+.price-calc{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;}
+.price-calc .days{font-size:.66rem;font-weight:500;color:var(--text-dim);display:block;}
+.add-btn{background:var(--ink);color:var(--on-dark);border:none;border-radius:7px;padding:.55rem 1.1rem;font-family:'IBM Plex Mono',monospace;font-size:.78rem;font-weight:600;cursor:pointer;transition:all .2s;}
+.add-btn:hover:not(:disabled){background:var(--signal);color:var(--ink);}
+.add-btn:disabled{opacity:.4;cursor:not-allowed;}
+
+/* ── HOW IT WORKS ── */
+.hiw{background:var(--ink);color:var(--on-dark);}
+.hiw .section-label{color:var(--signal);}
+.hiw-grid{display:grid;grid-template-columns:repeat(auto-fit,minmax(220px,1fr));gap:1.6rem;}
+.hiw-step{border:1px solid var(--line);border-radius:12px;padding:1.6rem;}
+.hiw-num{font-family:'IBM Plex Mono',monospace;font-size:.75rem;color:var(--signal);margin-bottom:.8rem;}
+.hiw-step h4{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;font-weight:600;margin-bottom:.5rem;}
+.hiw-step p{color:var(--on-dark-dim);font-size:.85rem;line-height:1.55;}
+
+/* ── TERMS TICKET ── */
+.terms-wrap{background:#fff;border:1px dashed var(--line-dark);border-radius:14px;padding:2rem 2.2rem;max-width:720px;}
+.terms-wrap h4{font-family:'Space Grotesk',sans-serif;font-size:1.1rem;margin-bottom:1.1rem;}
+.terms-list{list-style:none;display:flex;flex-direction:column;gap:.75rem;}
+.terms-list li{font-family:'IBM Plex Mono',monospace;font-size:.82rem;color:var(--text-dim);line-height:1.6;padding-left:1.3rem;position:relative;}
+.terms-list li::before{content:"—";position:absolute;left:0;color:var(--signal-deep);}
+
+/* ── FOOTER ── */
+footer{background:var(--ink);color:var(--on-dark-dim);padding:3rem 3rem 2rem;}
+.footer-grid{display:flex;justify-content:space-between;flex-wrap:wrap;gap:2rem;margin-bottom:2rem;}
+.footer-brand{font-family:'Space Grotesk',sans-serif;font-size:1.15rem;font-weight:700;color:var(--on-dark);margin-bottom:.5rem;}
+.footer-logo-img{height:32px;width:auto;object-fit:contain;display:block;margin-bottom:.7rem;}
+.footer-col h5{font-family:'IBM Plex Mono',monospace;font-size:.72rem;color:var(--on-dark);letter-spacing:.06em;text-transform:uppercase;margin-bottom:.7rem;}
+.footer-col a,.footer-col p{display:block;color:var(--on-dark-dim);text-decoration:none;font-size:.84rem;margin-bottom:.45rem;}
+.footer-bottom{border-top:1px solid var(--line);padding-top:1.3rem;font-size:.75rem;font-family:'IBM Plex Mono',monospace;text-align:center;color:var(--on-dark-dim);}
+
+/* ── FLOATING WHATSAPP ── */
+.fab-wa{position:fixed;bottom:1.6rem;right:1.6rem;z-index:600;background:var(--wa);color:#fff;border:none;border-radius:50px;padding:.85rem 1.3rem;display:flex;align-items:center;gap:.55rem;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:.85rem;cursor:pointer;box-shadow:0 6px 24px rgba(37,211,102,.4);text-decoration:none;}
+
+/* ── CART DRAWER ── */
+.overlay{position:fixed;inset:0;background:rgba(23,24,28,.55);z-index:800;opacity:0;pointer-events:none;transition:opacity .25s;}
+.overlay.open{opacity:1;pointer-events:auto;}
+.cart-drawer{position:fixed;top:0;right:0;width:400px;max-width:92vw;height:100%;background:var(--paper);z-index:900;transform:translateX(105%);transition:transform .3s ease;display:flex;flex-direction:column;box-shadow:-10px 0 40px rgba(0,0,0,.2);}
+.cart-drawer.open{transform:translateX(0);}
+.cart-head{padding:1.4rem 1.5rem;border-bottom:1px dashed var(--line-dark);display:flex;justify-content:space-between;align-items:center;background:var(--ink);color:var(--on-dark);}
+.cart-head h3{font-family:'Space Grotesk',sans-serif;font-size:1.05rem;}
+.cart-head button{background:none;border:none;color:var(--on-dark);font-size:1.3rem;cursor:pointer;}
+.cart-items{flex:1;overflow-y:auto;padding:1.2rem 1.5rem;}
+.empty-cart{text-align:center;padding:3rem 1rem;color:var(--text-dim);}
+.empty-icon{font-size:2.4rem;margin-bottom:.8rem;}
+.cart-item{border:1px solid var(--line-dark);border-radius:10px;padding:.9rem 1rem;margin-bottom:.8rem;background:#fff;}
+.cart-item-top{display:flex;justify-content:space-between;margin-bottom:.35rem;}
+.cart-item-top h4{font-family:'Space Grotesk',sans-serif;font-size:.92rem;}
+.cart-item-dates{font-family:'IBM Plex Mono',monospace;font-size:.7rem;color:var(--text-dim);margin-bottom:.5rem;}
+.cart-item-bottom{display:flex;justify-content:space-between;align-items:center;flex-wrap:wrap;gap:.4rem;}
+.item-price{font-family:'IBM Plex Mono',monospace;font-size:.85rem;font-weight:600;}
+.remove-btn{background:none;border:none;color:#c14545;font-family:'IBM Plex Mono',monospace;font-size:.7rem;cursor:pointer;text-decoration:underline;}
+.fulfil-toggle{display:flex;gap:.6rem;padding:0 1.5rem 1rem;}
+.fulfil-opt{flex:1;border:1.5px solid var(--line-dark);border-radius:8px;padding:.65rem;text-align:center;cursor:pointer;font-family:'IBM Plex Mono',monospace;font-size:.76rem;transition:all .2s;}
+.fulfil-opt.active{border-color:var(--signal);background:rgba(255,176,32,.1);color:var(--signal-deep);font-weight:600;}
+.cart-summary{border-top:1px dashed var(--line-dark);padding:1.2rem 1.5rem 1.5rem;background:var(--paper-dim);}
+.sum-row{display:flex;justify-content:space-between;font-family:'IBM Plex Mono',monospace;font-size:.82rem;margin-bottom:.5rem;color:var(--text-dim);}
+.sum-row.total{color:var(--text-ink);font-weight:700;font-size:.98rem;border-top:1px solid var(--line-dark);padding-top:.7rem;margin-top:.4rem;}
+.checkout-btn{width:100%;background:var(--wa);color:#fff;border:none;border-radius:9px;padding:.9rem;font-family:'IBM Plex Sans',sans-serif;font-weight:600;font-size:.92rem;cursor:pointer;margin-top:.9rem;display:flex;align-items:center;justify-content:center;gap:.5rem;transition:all .2s;}
+.checkout-btn:disabled{opacity:.4;cursor:not-allowed;}
+.checkout-btn:hover:not(:disabled){background:#1eb956;}
+
+/* ── TOAST ── */
+.toast{position:fixed;bottom:6rem;left:50%;transform:translateX(-50%) translateY(20px);background:var(--ink);color:var(--on-dark);padding:.8rem 1.4rem;border-radius:9px;font-family:'IBM Plex Mono',monospace;font-size:.82rem;opacity:0;pointer-events:none;transition:all .3s;z-index:1000;}
+.toast.show{opacity:1;transform:translateX(-50%) translateY(0);}
+
+@media(max-width:720px){
+  header,.section,.hero,.trust-bar{padding-left:1.3rem;padding-right:1.3rem;}
+  header{padding-top:.85rem;padding-bottom:.85rem;}
+  nav{display:none;}
+  .hero{min-height:auto;padding-top:3.4rem;padding-bottom:3.4rem;}
+  .hero h1{font-size:clamp(2.1rem,9vw,2.8rem);}
+  .hero-sub{max-width:100%;}
+  .hero-actions{flex-direction:column;}
+  .hero-actions .btn-primary,.hero-actions .btn-ghost{width:100%;text-align:center;}
+  .hero-stats{gap:1.3rem 1.8rem;}
+  .trust-bar{gap:1.1rem 1.6rem;padding-top:1rem;padding-bottom:1rem;}
+  .trust-item{font-size:.78rem;}
+  .section{padding-top:3.2rem;padding-bottom:3.2rem;}
+  .section-sub{margin-bottom:2rem;}
+  .grid{grid-template-columns:repeat(auto-fill,minmax(145px,1fr));gap:.8rem;}
+  .hiw-grid{grid-template-columns:1fr;}
+  .footer-grid{gap:1.8rem;}
+  footer{padding:2.6rem 1.3rem 1.6rem;}
+  .cart-drawer{width:100%;max-width:100%;}
+
+  /* Compact product tiles so multiple fit per row */
+  .product-img-wrap{height:88px;padding:8px;}
+  .emoji-big{font-size:2.1rem;}
+  .product-info{padding:.75rem .75rem .9rem;}
+  .product-info h4{font-size:.84rem;line-height:1.25;}
+  .product-desc{font-size:.7rem;line-height:1.4;margin-bottom:.5rem;display:-webkit-box;-webkit-line-clamp:2;line-clamp:2;-webkit-box-orient:vertical;overflow:hidden;}
+  .spec-chips{gap:.3rem;margin-bottom:.6rem;}
+  .chip{font-size:.58rem;padding:.2rem .4rem;}
+  .tag-strip{padding:.5rem .65rem;}
+  .tag-code{font-size:.6rem;}
+  .status-pill{font-size:.56rem;gap:.3rem;}
+  .rate-row{margin-bottom:.55rem;}
+  .rate{font-size:.86rem;}
+  .rate span{font-size:.6rem;}
+  .deposit-note{font-size:.58rem;}
+  .date-row{flex-direction:column;gap:.4rem;margin-bottom:.5rem;}
+  .date-field label{font-size:.58rem;}
+  .date-field input{font-size:.72rem;padding:.5rem .45rem;}
+  .avail-msg{font-size:.62rem;line-height:1.35;}
+  .product-footer{flex-direction:column;align-items:stretch;gap:.5rem;}
+  .price-calc{font-size:.78rem;}
+  .price-calc .days{font-size:.6rem;}
+  .add-btn{width:100%;padding:.65rem;font-size:.72rem;}
+}
+
+@media(max-width:380px){
+  .grid{gap:.6rem;}
+  .product-info{padding:.65rem .65rem .8rem;}
+}
+
+@media(max-width:400px){
+  .hero h1{font-size:1.9rem;}
+  .date-row{gap:.4rem;}
+  .terms-wrap{padding:1.5rem 1.3rem;}
+}
+</style>
+</head>
+<body>
+
+<header>
+  <a href="#" class="brand">
+    <img src="IC_logo.png" alt="Icreate logo" class="brand-mark" style="object-fit:contain;background:none;">
+    <span class="brand-name">ICREATE</span>
+  </a>
+  <nav>
+    <a href="#gear">Gear</a>
+    <a href="#how">How it works</a>
+    <a href="#terms">Terms</a>
+    <a href="#contact">Contact</a>
+  </nav>
+  <button class="cart-btn" onclick="openCart()">
+    Booking <span class="cart-count mono" id="cartCount">0</span>
+  </button>
+</header>
+
+<section class="hero">
+  <div class="hero-inner">
+    <div class="hero-eyebrow"><span class="dot"></span><span class="etext">PRO AV RENTAL · GAUTENG</span></div>
+    <h1>Gear up.<br>Shoot <span>today.</span></h1>
+    <p class="hero-sub">Wireless mics, tripods, lights, podcast mics & phone stands — tested, tagged and ready to go. Pick your dates, request on WhatsApp, confirmed same day.</p>
+    <div class="hero-actions">
+      <button class="btn-primary" onclick="document.getElementById('gear').scrollIntoView({behavior:'smooth'})">Browse Gear</button>
+      <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
+    </div>
+    <div class="hero-stats">
+      <div class="hstat"><b>7</b><span>GEAR OPTIONS</span></div>
+      <div class="hstat"><b>&lt;2HR</b><span>AVG. CONFIRM TIME</span></div>
+      <div class="hstat"><b>100%</b><span>SECURITY DEPOSIT REFUNDABLE</span></div>
+    </div>
+  </div>
+</section>
+
+<div class="trust-bar">
+  <div class="trust-item"><span class="ti">✓</span>Tested before every pickup</div>
+  <div class="trust-item"><span class="ti">↻</span>Deposit refunded on return</div>
+  <div class="trust-item"><span class="ti">🚚</span>Delivery or self-pickup</div>
+  <div class="trust-item"><span class="ti">💬</span>Confirm & pay via WhatsApp</div>
+</div>
+
+<section class="section" id="gear">
+  <div class="section-label">Available Gear</div>
+  <h2 class="section-title">Pick your kit</h2>
+  <p class="section-sub">Select rental dates on any item — we'll flag it instantly if those dates are already booked.</p>
+
+  <div class="cat-label">Audio</div>
+  <div class="grid" id="audioGrid"></div>
+
+  <div class="cat-label">Support</div>
+  <div class="grid" id="supportGrid"></div>
+
+  <div class="cat-label">Lighting</div>
+  <div class="grid" id="lightingGrid"></div>
+
+  <div class="cat-label">Packages</div>
+  <div class="grid" id="PackagesGrid"></div>
+</section>
+
+<section class="section hiw" id="how">
+  <div class="section-label">Process</div>
+  <h2 class="section-title">How it works</h2>
+  <p class="section-sub" style="color:var(--on-dark-dim)">Three steps, no forms, no account needed.</p>
+  <div class="hiw-grid">
+    <div class="hiw-step">
+      <div class="hiw-num">01 / REQUEST</div>
+      <h4>Pick gear & dates</h4>
+      <p>Add items to your booking with the dates you need them. We check availability live, so you'll never request something that's already out.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">02 / CONFIRM</div>
+      <h4>We confirm on WhatsApp</h4>
+      <p>Your booking summary sends straight to WhatsApp. We confirm availability, take your deposit, and lock in your dates — usually within two hours.</p>
+    </div>
+    <div class="hiw-step">
+      <div class="hiw-num">03 / COLLECT</div>
+      <h4>Pickup or delivery</h4>
+      <p>Collect from us or have it delivered. Gear's tested and packed before you arrive. Return it, we inspect, and your deposit's refunded.</p>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="terms">
+  <div class="section-label">Fine Print</div>
+  <h2 class="section-title">Rental terms</h2>
+  <div class="terms-wrap">
+    <h4>Before you book</h4>
+    <ul class="terms-list">
+      <li>Security Deposit are fully refundable, released within 24 hours of gear being returned and inspected.</li>
+      <li>Late fees returns will be charged 10% of the security deposit</li>
+      <li>Damage beyond normal wear is charged at repair or replacement cost, deducted from the deposit.</li>
+      <li>Minimum rental period is 1 day. Multi-day and weekly rates available on request.</li>
+    </ul>
+  </div>
+</section>
+
+<footer id="contact">
+  <div class="footer-grid">
+    <div>
+      <img src="IC_logo.png" alt="Icreate logo" class="footer-logo-img">
+      <p style="max-width:240px">Pro AV gear rental for creators, in Gauteng.</p>
+    </div>
+    <div class="footer-col">
+      <h5>Contact</h5>
+      <a href="#" id="footerWaLink">WhatsApp us</a>
+      <a href="#" id="footerCallLink" class="mono"></a>
+      <p>Sunday to Sunday</p>
+    </div>
+    <div class="footer-col">
+      <h5>Service Area</h5>
+      <p>Gauteng</p>
+    </div>
+  </div>
+  <div class="footer-bottom">© 2026 ICREATE RENTALS · ALL GEAR TESTED & TAGGED BEFORE HANDOVER</div>
+</footer>
+
+<a href="#" class="fab-wa" id="fabWa" target="_blank">💬 WhatsApp Us</a>
+
+<div class="overlay" id="cartOverlay" onclick="closeCart()"></div>
+<div class="cart-drawer" id="cartDrawer">
+  <div class="cart-head">
+    <h3>Your Booking</h3>
+    <button onclick="closeCart()">✕</button>
+  </div>
+  <div class="cart-items" id="cartItems"></div>
+  <div class="fulfil-toggle">
+    <div class="fulfil-opt active" id="optPickup" onclick="setFulfilment('pickup')">Self Pickup</div>
+    <div class="fulfil-opt" id="optDelivery" onclick="setFulfilment('delivery')">Delivery (+R90)</div>
+  </div>
+  <div class="cart-summary">
+    <div class="sum-row"><span>Rental subtotal</span><span id="sumSubtotal">R0</span></div>
+    <div class="sum-row"><span>Refundable deposit</span><span id="sumDeposit">R0</span></div>
+    <div class="sum-row"><span>Delivery fee</span><span id="sumDelivery">R0</span></div>
+    <div class="sum-row total"><span>Total due at pickup</span><span id="sumTotal">R0</span></div>
+    <button class="checkout-btn" id="waBtn" onclick="checkoutWhatsApp()" disabled>💬 Send Booking Request</button>
+  </div>
+</div>
+
+<div class="toast" id="toast"></div>
+
+<script>
+const WA_NUMBER = "27656080896";
+document.getElementById("fabWa").href = `https://wa.me/${WA_NUMBER}`;
+document.getElementById("footerWaLink").href = `https://wa.me/${WA_NUMBER}`;
+
+const PHONE_NUMBER = WA_NUMBER;
+function formatPhoneDisplay(n){
+  return `+${n.slice(0,2)} ${n.slice(2,4)} ${n.slice(4,7)} ${n.slice(7,11)}`;
+}
+const callLink = document.getElementById("footerCallLink");
+callLink.href = `tel:+${PHONE_NUMBER}`;
+callLink.textContent = formatPhoneDisplay(PHONE_NUMBER);
+
+// Each product: dailyRate & deposit are
+const products = [
+  {
+    id:1, code:"WM-014", name:"Wireless Microphone", cat:"audio",
+    desc:"Lavalier clip-on wireless kit with transmitter & receiver. Great for interviews and run-and-gun shoots.",
+    specs:["Clip-on lav","~90m range","3.5mm + USB-C out"],
+    dailyRate:250, deposit:850, emoji:"🎙", img:"images/Wireless_Microphone.jpeg",
+    blocked:[{start:"2026-09-02",end:"2026-09-04"}]
+  },
+  {
+    id:2, code:"PM-021", name:"Podcast Microphone", cat:"audio",
+    desc:"Studio-grade USB/XLR condenser mic with desktop stand and pop filter included.",
+    specs:["USB + XLR","Cardioid pattern","Stand + pop filter"],
+    dailyRate:350, deposit:600, emoji:"🎧", img:"images/Podcast_Microphone.jpeg",
+    blocked:[{start:"2026-09-15",end:"2026-09-17"}]
+  },
+  {
+    id:3, code:"TR-007", name:"Video Tripod", cat:"support",
+    desc:"Adjustable fluid-head tripod for smooth pans and stable handheld-free shots.",
+    specs:["Fluid head","Up to 165cm","Carry bag incl."],
+    dailyRate:120, deposit:400, emoji:"🎥", img:"images/Video_Tripod.jpeg",
+    blocked:[{start:"2026-09-10",end:"2026-09-12"}]
+  },
+  {
+    id:4, code:"PS-033", name:"Phone Stand", cat:"support",
+    desc:"Adjustable content-creator stand with cold-shoe mount for mics and lights.",
+    specs:["Cold-shoe mount","Desktop + floor","Fits all phones"],
+    dailyRate:90, deposit:150, emoji:"📱", img:"images/Phone_Stand.jpeg",
+    blocked:[]
+  },
+  {
+    id:5, code:"PL-019", name:"Photography Light", cat:"lighting",
+    desc:"Portable LED softbox light with adjustable brightness and colour temperature.",
+    specs:["LED softbox","Dimmable","Stand incl."],
+    dailyRate:200, deposit:500, emoji:"💡", img:"images/Photography_Light.jpeg",
+    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+  },
+  {
+    id:6, code:"SK-042", name:"Creator Starter Kit", cat:"Packages",
+    desc:"Everything a new creator needs in one bundle — mic and phone stand together.",
+    specs:["2x wireless mics","ajustable phone stand"],
+    dailyRate:350, deposit:500, emoji:"💡", img:"images/Creator_Starter_Kit.jpeg",
+    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+  },
+  {
+    id:7, code:"PK-240", name:"Podcasters Package", cat:"Packages",
+    desc:"Everything a podcaster needs in one bundle — light, mic and Tripod together.",
+    specs:["Podcast mic","Tripod","LED Photography light"],
+    dailyRate:700, deposit:500, emoji:"💡", img:"images/Podcasters_Package.jpeg",
+    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+  }
+];
+
+let cart = [];
+let fulfilment = "pickup";
+const DELIVERY_FEE = 90;
+
+function toDate(s){ return new Date(s + "T00:00:00"); }
+function daysBetween(startS,endS){
+  const ms = toDate(endS) - toDate(startS);
+  return Math.max(1, Math.round(ms/86400000) + 1);
+}
+function rangesOverlap(aStart,aEnd,bStart,bEnd){
+  return toDate(aStart) <= toDate(bEnd) && toDate(bStart) <= toDate(aEnd);
+}
+function checkAvailability(product,start,end){
+  for(const b of product.blocked){
+    if(rangesOverlap(start,end,b.start,b.end)) return {ok:false, conflict:b};
+  }
+  return {ok:true};
+}
+
+function renderGrid(items, gridId){
+  document.getElementById(gridId).innerHTML = items.map(p => `
+    <div class="product-card">
+      <div class="tag-strip">
+        <span class="tag-code">TAG · ${p.code}</span>
+        <span class="status-pill avail" id="status-${p.id}"><span class="sdot"></span>AVAILABLE</span>
+      </div>
+      <div class="product-img-wrap">${p.img ? `<img src="${p.img}" alt="${p.name}" class="product-photo" onerror="this.parentElement.innerHTML='<div class=&quot;emoji-big&quot;>${p.emoji}</div>'">` : `<div class="emoji-big">${p.emoji}</div>`}</div>
+      <div class="product-info">
+        <h4>${p.name}</h4>
+        <p class="product-desc">${p.desc}</p>
+        <div class="spec-chips">${p.specs.map(s=>`<span class="chip">${s}</span>`).join("")}</div>
+        <div class="rate-row">
+          <span class="rate">R${p.dailyRate}<span>/day</span></span>
+          <span class="deposit-note">+R${p.deposit} deposit</span>
+        </div>
+        <div class="date-row">
+          <div class="date-field">
+            <label>From</label>
+            <input type="date" id="start-${p.id}" onchange="validateDates(${p.id})" min="2026-08-27" />
+          </div>
+          <div class="date-field">
+            <label>To</label>
+            <input type="date" id="end-${p.id}" onchange="validateDates(${p.id})" min="2026-08-27" />
+          </div>
+        </div>
+        <div class="avail-msg" id="msg-${p.id}"></div>
+        <div class="product-footer">
+          <span class="price-calc" id="calc-${p.id}">Select dates<span class="days" id="calcdays-${p.id}"></span></span>
+          <button class="add-btn" id="addbtn-${p.id}" onclick="addToCart(${p.id})" disabled>Add +</button>
+        </div>
+      </div>
+    </div>
+  `).join("");
+}
+
+function validateDates(id){
+  const p = products.find(x=>x.id===id);
+  const start = document.getElementById(`start-${id}`).value;
+  const end = document.getElementById(`end-${id}`).value;
+  const msgEl = document.getElementById(`msg-${id}`);
+  const calcEl = document.getElementById(`calc-${id}`);
+  const daysEl = document.getElementById(`calcdays-${id}`);
+  const btn = document.getElementById(`addbtn-${id}`);
+  const statusEl = document.getElementById(`status-${id}`);
+
+  if(!start || !end){
+    msgEl.textContent = ""; msgEl.className = "avail-msg";
+    calcEl.innerHTML = "Select dates"; btn.disabled = true;
+    return;
+  }
+  if(toDate(end) < toDate(start)){
+    msgEl.textContent = "End date must be after start date"; msgEl.className = "avail-msg err";
+    btn.disabled = true; return;
+  }
+  const avail = checkAvailability(p,start,end);
+  if(!avail.ok){
+    msgEl.textContent = `Booked ${avail.conflict.start} to ${avail.conflict.end} — pick other dates`;
+    msgEl.className = "avail-msg err";
+    calcEl.innerHTML = "Unavailable";
+    daysEl.textContent = "";
+    btn.disabled = true;
+    statusEl.className = "status-pill busy"; statusEl.innerHTML = '<span class="sdot"></span>LIMITED';
+    return;
+  }
+  const days = daysBetween(start,end);
+  const total = days * p.dailyRate;
+  msgEl.textContent = "Available for these dates"; msgEl.className = "avail-msg ok";
+  calcEl.innerHTML = `R${total}`;
+  daysEl.textContent = `${days} day${days>1?'s':''} rental`;
+  btn.disabled = false;
+  statusEl.className = "status-pill avail"; statusEl.innerHTML = '<span class="sdot"></span>AVAILABLE';
+}
+
+window.addEventListener("DOMContentLoaded", () => {
+  renderGrid(products.filter(p=>p.cat==="audio"), "audioGrid");
+  renderGrid(products.filter(p=>p.cat==="support"), "supportGrid");
+  renderGrid(products.filter(p=>p.cat==="lighting"), "lightingGrid");
+  renderGrid(products.filter(p=>p.cat==="Packages"), "PackagesGrid");
+});
+
+function addToCart(id){
+  const p = products.find(x=>x.id===id);
+  const start = document.getElementById(`start-${id}`).value;
+  const end = document.getElementById(`end-${id}`).value;
+  const days = daysBetween(start,end);
+  const lineTotal = days * p.dailyRate;
+  const cartId = `${id}-${start}-${end}`;
+
+  if(cart.find(x=>x.cartId===cartId)){
+    showToast(`${p.name} already in your booking for those dates`);
+    return;
+  }
+  cart.push({ cartId, id, name:p.name, code:p.code, emoji:p.emoji, start, end, days, dailyRate:p.dailyRate, deposit:p.deposit, lineTotal });
+  updateCart();
+  showToast(`${p.emoji} ${p.name} added to booking`);
+}
+
+function removeFromCart(cartId){
+  cart = cart.filter(x=>x.cartId!==cartId);
+  updateCart();
+}
+
+function setFulfilment(mode){
+  fulfilment = mode;
+  document.getElementById("optPickup").classList.toggle("active", mode==="pickup");
+  document.getElementById("optDelivery").classList.toggle("active", mode==="delivery");
+  updateCart();
+}
+
+function updateCart(){
+  document.getElementById("cartCount").textContent = cart.length;
+  const container = document.getElementById("cartItems");
+
+  if(cart.length===0){
+    container.innerHTML = `<div class="empty-cart"><div class="empty-icon">📦</div><p>Your booking is empty.<br>Add some gear to get started.</p></div>`;
+  } else {
+    container.innerHTML = cart.map(item => `
+      <div class="cart-item">
+        <div class="cart-item-top"><h4>${item.emoji} ${item.name}</h4></div>
+        <div class="cart-item-dates">${item.code} · ${item.start} → ${item.end} · ${item.days} day${item.days>1?'s':''}</div>
+        <div class="cart-item-bottom">
+          <span class="item-price">R${item.lineTotal} <span style="color:var(--text-dim);font-weight:400">+R${item.deposit} dep.</span></span>
+          <button class="remove-btn" onclick="removeFromCart('${item.cartId}')">Remove</button>
+        </div>
+      </div>
+    `).join("");
+  }
+
+  const subtotal = cart.reduce((s,i)=>s+i.lineTotal,0);
+  const depositTotal = cart.reduce((s,i)=>s+i.deposit,0);
+  const deliveryFee = (fulfilment==="delivery" && cart.length>0) ? DELIVERY_FEE : 0;
+  const grandTotal = subtotal + depositTotal + deliveryFee;
+
+  document.getElementById("sumSubtotal").textContent = `R${subtotal.toLocaleString()}`;
+  document.getElementById("sumDeposit").textContent = `R${depositTotal.toLocaleString()}`;
+  document.getElementById("sumDelivery").textContent = `R${deliveryFee.toLocaleString()}`;
+  document.getElementById("sumTotal").textContent = `R${grandTotal.toLocaleString()}`;
+  document.getElementById("waBtn").disabled = cart.length===0;
+}
+
+function openCart(){
+  document.getElementById("cartDrawer").classList.add("open");
+  document.getElementById("cartOverlay").classList.add("open");
+  document.body.style.overflow = "hidden";
+}
+function closeCart(){
+  document.getElementById("cartDrawer").classList.remove("open");
+  document.getElementById("cartOverlay").classList.remove("open");
+  document.body.style.overflow = "";
+}
+document.addEventListener("keydown", e => { if(e.key==="Escape") closeCart(); });
+
+function checkoutWhatsApp(){
+  if(!cart.length) return;
+  const subtotal = cart.reduce((s,i)=>s+i.lineTotal,0);
+  const depositTotal = cart.reduce((s,i)=>s+i.deposit,0);
+  const deliveryFee = fulfilment==="delivery" ? DELIVERY_FEE : 0;
+  const grandTotal = subtotal + depositTotal + deliveryFee;
+
+  const lines = cart.map(i => `• ${i.name} (${i.code}) — ${i.start} to ${i.end}, ${i.days} day${i.days>1?'s':''} — R${i.lineTotal} + R${i.deposit} deposit`).join("\n");
+  const msg = `Hi Icreate! 👋\n\nI'd like to request a booking:\n\n${lines}\n\nFulfilment: ${fulfilment==="delivery" ? `Delivery (+R${DELIVERY_FEE})` : "Self pickup"}\n\n*Rental subtotal: R${subtotal.toLocaleString()}*\n*Deposit total (refundable): R${depositTotal.toLocaleString()}*\n*Delivery fee: R${deliveryFee}*\n*Total due: R${grandTotal.toLocaleString()}*\n\nPlease confirm availability and next steps. Thanks!`;
+  window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+}
+
+let toastTimer;
+function showToast(msg){
+  const t = document.getElementById("toast");
+  t.textContent = "✓ " + msg;
+  t.classList.add("show");
+  clearTimeout(toastTimer);
+  toastTimer = setTimeout(() => t.classList.remove("show"), 2500);
+}
+</script>
+</body>
+</html>

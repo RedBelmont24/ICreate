@@ -264,13 +264,13 @@ footer{background:var(--ink);color:var(--on-dark-dim);padding:3rem 3rem 2rem;}
   <div class="hero-inner">
     <div class="hero-eyebrow"><span class="dot"></span><span class="etext">PRO AV RENTAL · GAUTENG</span></div>
     <h1>Gear up.<br>Shoot <span>today.</span></h1>
-    <p class="hero-sub">Wireless mics, tripods, lights, podcast mics & phone stands — tested, tagged and ready to go. Pick your dates, request on WhatsApp, confirmed same day.</p>
+    <p class="hero-sub">Wireless mics, tripods, lights, podcast mics & phone stands - tested, tagged and ready to go. Pick your dates, request on WhatsApp, confirmed same day.</p>
     <div class="hero-actions">
       <button class="btn-primary" onclick="document.getElementById('gear').scrollIntoView({behavior:'smooth'})">Browse Gear</button>
       <button class="btn-ghost" onclick="document.getElementById('how').scrollIntoView({behavior:'smooth'})">How it works</button>
     </div>
     <div class="hero-stats">
-      <div class="hstat"><b>7</b><span>GEAR OPTIONS</span></div>
+      <div class="hstat"><b>Different</b><span>GEAR OPTIONS</span></div>
       <div class="hstat"><b>&lt;2HR</b><span>AVG. CONFIRM TIME</span></div>
       <div class="hstat"><b>100%</b><span>SECURITY DEPOSIT REFUNDABLE</span></div>
     </div>
@@ -280,14 +280,14 @@ footer{background:var(--ink);color:var(--on-dark-dim);padding:3rem 3rem 2rem;}
 <div class="trust-bar">
   <div class="trust-item"><span class="ti">✓</span>Tested before every pickup</div>
   <div class="trust-item"><span class="ti">↻</span>Deposit refunded on return</div>
-  <div class="trust-item"><span class="ti">🚚</span>Delivery or self-pickup</div>
-  <div class="trust-item"><span class="ti">💬</span>Confirm & pay via WhatsApp</div>
+  <div class="trust-item"><span class="ti"></span>Delivery or self-pickup</div>
+  <div class="trust-item"><span class="ti"></span>Confirm & pay via WhatsApp</div>
 </div>
 
 <section class="section" id="gear">
   <div class="section-label">Available Gear</div>
   <h2 class="section-title">Pick your kit</h2>
-  <p class="section-sub">Select rental dates on any item — we'll flag it instantly if those dates are already booked.</p>
+  <p class="section-sub">Select rental dates on any item - we'll flag it instantly if those dates are already booked.</p>
 
   <div class="cat-label">Audio</div>
   <div class="grid" id="audioGrid"></div>
@@ -315,7 +315,7 @@ footer{background:var(--ink);color:var(--on-dark-dim);padding:3rem 3rem 2rem;}
     <div class="hiw-step">
       <div class="hiw-num">02 / CONFIRM</div>
       <h4>We confirm on WhatsApp</h4>
-      <p>Your booking summary sends straight to WhatsApp. We confirm availability, take your deposit, and lock in your dates — usually within two hours.</p>
+      <p>Your booking summary sends straight to WhatsApp. We confirm availability, take your deposit, and lock in your dates usually within two hours.</p>
     </div>
     <div class="hiw-step">
       <div class="hiw-num">03 / COLLECT</div>
@@ -395,29 +395,30 @@ function formatPhoneDisplay(n){
 const callLink = document.getElementById("footerCallLink");
 callLink.href = `tel:+${PHONE_NUMBER}`;
 callLink.textContent = formatPhoneDisplay(PHONE_NUMBER);
+const TODAY_STR = new Date().toISOString().slice(0,10);
 
-// Each product: dailyRate & deposit are
+// Each product: dailyRate & deposit
 const products = [
   {
     id:1, code:"WM-014", name:"Wireless Microphone", cat:"audio",
     desc:"Lavalier clip-on wireless kit with transmitter & receiver. Great for interviews and run-and-gun shoots.",
     specs:["Clip-on lav","~90m range","3.5mm + USB-C out"],
-    dailyRate:250, deposit:850, emoji:"🎙", img:"images/Wireless_Microphone.jpeg",
-    blocked:[{start:"2026-09-02",end:"2026-09-04"}]
+    dailyRate:250, deposit:500, emoji:"🎙", img:"images/Wireless_Microphone.jpeg",
+    blocked:[]
   },
   {
     id:2, code:"PM-021", name:"Podcast Microphone", cat:"audio",
     desc:"Studio-grade USB/XLR condenser mic with desktop stand and pop filter included.",
     specs:["USB + XLR","Cardioid pattern","Stand + pop filter"],
     dailyRate:350, deposit:600, emoji:"🎧", img:"images/Podcast_Microphone.jpeg",
-    blocked:[{start:"2026-09-15",end:"2026-09-17"}]
+    blocked:[]
   },
   {
     id:3, code:"TR-007", name:"Video Tripod", cat:"support",
     desc:"Adjustable fluid-head tripod for smooth pans and stable handheld-free shots.",
     specs:["Fluid head","Up to 165cm","Carry bag incl."],
-    dailyRate:120, deposit:400, emoji:"🎥", img:"images/Video_Tripod.jpeg",
-    blocked:[{start:"2026-09-10",end:"2026-09-12"}]
+    dailyRate:120, deposit:200, emoji:"🎥", img:"images/Video_Tripod.jpeg",
+    blocked:[]
   },
   {
     id:4, code:"PS-033", name:"Phone Stand", cat:"support",
@@ -431,21 +432,21 @@ const products = [
     desc:"Portable LED softbox light with adjustable brightness and colour temperature.",
     specs:["LED softbox","Dimmable","Stand incl."],
     dailyRate:200, deposit:500, emoji:"💡", img:"images/Photography_Light.jpeg",
-    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+    blocked:[]
   },
   {
     id:6, code:"SK-042", name:"Creator Starter Kit", cat:"Packages",
-    desc:"Everything a new creator needs in one bundle — mic and phone stand together.",
+    desc:"Everything a new creator needs in one bundle - mic and phone stand together.",
     specs:["2x wireless mics","ajustable phone stand"],
     dailyRate:350, deposit:500, emoji:"💡", img:"images/Creator_Starter_Kit.jpeg",
-    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+    blocked:[]
   },
   {
     id:7, code:"PK-240", name:"Podcasters Package", cat:"Packages",
-    desc:"Everything a podcaster needs in one bundle — light, mic and Tripod together.",
+    desc:"Everything a podcaster needs in one bundle - light, mic and Tripod together.",
     specs:["Podcast mic","Tripod","LED Photography light"],
     dailyRate:700, deposit:500, emoji:"💡", img:"images/Podcasters_Package.jpeg",
-    blocked:[{start:"2026-09-05",end:"2026-09-06"}]
+    blocked:[]
   }
 ];
 
@@ -462,7 +463,7 @@ function rangesOverlap(aStart,aEnd,bStart,bEnd){
   return toDate(aStart) <= toDate(bEnd) && toDate(bStart) <= toDate(aEnd);
 }
 function checkAvailability(product,start,end){
-  for(const b of product.blocked){
+  for(const b of (product.blocked || [])){
     if(rangesOverlap(start,end,b.start,b.end)) return {ok:false, conflict:b};
   }
   return {ok:true};
@@ -487,11 +488,11 @@ function renderGrid(items, gridId){
         <div class="date-row">
           <div class="date-field">
             <label>From</label>
-            <input type="date" id="start-${p.id}" onchange="validateDates(${p.id})" min="2026-08-27" />
+            <input type="date" id="start-${p.id}" onchange="validateDates(${p.id})" min="${TODAY_STR}" />
           </div>
           <div class="date-field">
             <label>To</label>
-            <input type="date" id="end-${p.id}" onchange="validateDates(${p.id})" min="2026-08-27" />
+            <input type="date" id="end-${p.id}" onchange="validateDates(${p.id})" min="${TODAY_STR}" />
           </div>
         </div>
         <div class="avail-msg" id="msg-${p.id}"></div>
@@ -525,10 +526,9 @@ function validateDates(id){
   }
   const avail = checkAvailability(p,start,end);
   if(!avail.ok){
-    msgEl.textContent = `Booked ${avail.conflict.start} to ${avail.conflict.end} — pick other dates`;
+    msgEl.textContent = `Booked ${avail.conflict.start} to ${avail.conflict.end} -pick other dates`;
     msgEl.className = "avail-msg err";
     calcEl.innerHTML = "Unavailable";
-    daysEl.textContent = "";
     btn.disabled = true;
     statusEl.className = "status-pill busy"; statusEl.innerHTML = '<span class="sdot"></span>LIMITED';
     return;
@@ -536,8 +536,9 @@ function validateDates(id){
   const days = daysBetween(start,end);
   const total = days * p.dailyRate;
   msgEl.textContent = "Available for these dates"; msgEl.className = "avail-msg ok";
-  calcEl.innerHTML = `R${total}`;
-  daysEl.textContent = `${days} day${days>1?'s':''} rental`;
+  calcEl.innerHTML = `R${total}<span class="days" id="calcdays-${id}"></span>`;
+  document.getElementById(`calcdays-${id}`).textContent =
+  `${days} day${days > 1 ? 's' : ''} rental`;
   btn.disabled = false;
   statusEl.className = "status-pill avail"; statusEl.innerHTML = '<span class="sdot"></span>AVAILABLE';
 }

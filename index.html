@@ -111,6 +111,13 @@ nav a:hover{color:var(--text-ink);}
 .rate{font-family:'IBM Plex Mono',monospace;font-weight:600;font-size:1.05rem;color:var(--text-ink);}
 .rate span{font-size:.68rem;font-weight:500;color:var(--text-dim);}
 .deposit-note{font-family:'IBM Plex Mono',monospace;font-size:.68rem;color:var(--text-dim);}
+.qty-row{display:flex;justify-content:space-between;align-items:center;margin-bottom:.7rem;}
+.qty-row label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text-dim);letter-spacing:.03em;text-transform:uppercase;}
+.qty-stepper{display:flex;align-items:center;gap:.65rem;}
+.qty-btn{width:26px;height:26px;flex-shrink:0;border-radius:6px;border:1px solid var(--line-dark);background:#fff;color:var(--text-ink);font-family:'IBM Plex Mono',monospace;font-size:1rem;font-weight:600;line-height:1;cursor:pointer;display:flex;align-items:center;justify-content:center;transition:all .2s;}
+.qty-btn:hover{background:var(--ink);color:var(--on-dark);border-color:var(--ink);}
+.qty-btn:active{transform:scale(.92);}
+.qty-val{font-family:'IBM Plex Mono',monospace;font-size:.88rem;font-weight:600;min-width:14px;text-align:center;}
 .date-row{display:flex;gap:.5rem;margin-bottom:.6rem;}
 .date-field{flex:1;min-width:0;display:flex;flex-direction:column;gap:.25rem;}
 .date-field label{font-family:'IBM Plex Mono',monospace;font-size:.62rem;color:var(--text-dim);letter-spacing:.03em;text-transform:uppercase;}
@@ -400,14 +407,14 @@ const TODAY_STR = new Date().toISOString().slice(0,10);
 // Each product: dailyRate & deposit
 const products = [
   {
-    id:1, code:"WM-014", name:"Holly Audio Lark 1", cat:"audio",
+    id:1, code:"WM-014", name:"Wireless Microphone", cat:"audio",
     desc:"Lavalier clip-on wireless kit with transmitter & receiver. Great for interviews and run-and-gun shoots.",
-    specs:["USB + XLR"," Cardioid Patten","40Hz - 16Hz"],
+    specs:["Clip-on lav","~90m range","3.5mm + USB-C out"],
     dailyRate:250, deposit:500, emoji:"🎙", img:"images/Wireless_Microphone.jpeg",
     blocked:[]
   },
   {
-    id:2, code:"PM-021", name:"Maono PD200X", cat:"audio",
+    id:2, code:"PM-021", name:"Podcast Microphone", cat:"audio",
     desc:"Studio-grade USB/XLR condenser mic with desktop stand and pop filter included.",
     specs:["USB + XLR","Cardioid pattern","Stand + pop filter"],
     dailyRate:350, deposit:600, emoji:"🎧", img:"images/Podcast_Microphone.jpeg",
@@ -450,6 +457,10 @@ const products = [
   }
 ];
 
+const QTY_MAX = 20; // sanity cap on the stepper only — not tied to actual owned stock
+const qtyState = {};
+products.forEach(p => { qtyState[p.id] = 1; });
+
 let cart = [];
 let fulfilment = "pickup";
 const DELIVERY_FEE = 90;
@@ -485,6 +496,14 @@ function renderGrid(items, gridId){
           <span class="rate">R${p.dailyRate}<span>/day</span></span>
           <span class="deposit-note">+R${p.deposit} deposit</span>
         </div>
+        <div class="qty-row">
+          <label>Quantity</label>
+          <div class="qty-stepper">
+            <button type="button" class="qty-btn" onclick="changeQty(${p.id},-1)">−</button>
+            <span class="qty-val" id="qty-${p.id}">1</span>
+            <button type="button" class="qty-btn" onclick="changeQty(${p.id},1)">+</button>
+          </div>
+        </div>
         <div class="date-row">
           <div class="date-field">
             <label>From</label>
@@ -505,8 +524,16 @@ function renderGrid(items, gridId){
   `).join("");
 }
 
+function changeQty(id, delta){
+  const next = (qtyState[id] || 1) + delta;
+  qtyState[id] = Math.min(QTY_MAX, Math.max(1, next));
+  document.getElementById(`qty-${id}`).textContent = qtyState[id];
+  validateDates(id);
+}
+
 function validateDates(id){
   const p = products.find(x=>x.id===id);
+  const qty = qtyState[id] || 1;
   const start = document.getElementById(`start-${id}`).value;
   const end = document.getElementById(`end-${id}`).value;
   const msgEl = document.getElementById(`msg-${id}`);
@@ -526,19 +553,19 @@ function validateDates(id){
   }
   const avail = checkAvailability(p,start,end);
   if(!avail.ok){
-    msgEl.textContent = `Booked ${avail.conflict.start} to ${avail.conflict.end} -pick other dates`;
+    msgEl.textContent = `Booked ${avail.conflict.start} to ${avail.conflict.end} — pick other dates`;
     msgEl.className = "avail-msg err";
     calcEl.innerHTML = "Unavailable";
+    daysEl.textContent = "";
     btn.disabled = true;
     statusEl.className = "status-pill busy"; statusEl.innerHTML = '<span class="sdot"></span>LIMITED';
     return;
   }
   const days = daysBetween(start,end);
-  const total = days * p.dailyRate;
+  const total = days * p.dailyRate * qty;
   msgEl.textContent = "Available for these dates"; msgEl.className = "avail-msg ok";
-  calcEl.innerHTML = `R${total}<span class="days" id="calcdays-${id}"></span>`;
-  document.getElementById(`calcdays-${id}`).textContent =
-  `${days} day${days > 1 ? 's' : ''} rental`;
+  calcEl.innerHTML = `R${total}`;
+  daysEl.textContent = `${qty}x · ${days} day${days>1?'s':''} rental`;
   btn.disabled = false;
   statusEl.className = "status-pill avail"; statusEl.innerHTML = '<span class="sdot"></span>AVAILABLE';
 }
@@ -552,19 +579,27 @@ window.addEventListener("DOMContentLoaded", () => {
 
 function addToCart(id){
   const p = products.find(x=>x.id===id);
+  const qty = qtyState[id] || 1;
   const start = document.getElementById(`start-${id}`).value;
   const end = document.getElementById(`end-${id}`).value;
   const days = daysBetween(start,end);
-  const lineTotal = days * p.dailyRate;
+  const lineTotal = days * p.dailyRate * qty;
+  const depositTotal = p.deposit * qty;
   const cartId = `${id}-${start}-${end}`;
 
   if(cart.find(x=>x.cartId===cartId)){
-    showToast(`${p.name} already in your booking for those dates`);
+    showToast(`${p.name} already in your booking for those dates — remove it first to change quantity`);
     return;
   }
-  cart.push({ cartId, id, name:p.name, code:p.code, emoji:p.emoji, start, end, days, dailyRate:p.dailyRate, deposit:p.deposit, lineTotal });
+  cart.push({ cartId, id, name:p.name, code:p.code, emoji:p.emoji, qty, start, end, days, dailyRate:p.dailyRate, deposit:depositTotal, lineTotal });
   updateCart();
-  showToast(`${p.emoji} ${p.name} added to booking`);
+  showToast(`${p.emoji} ${qty}x ${p.name} added to booking`);
+
+  qtyState[id] = 1;
+  document.getElementById(`qty-${id}`).textContent = 1;
+  document.getElementById(`start-${id}`).value = "";
+  document.getElementById(`end-${id}`).value = "";
+  validateDates(id);
 }
 
 function removeFromCart(cartId){
@@ -588,7 +623,7 @@ function updateCart(){
   } else {
     container.innerHTML = cart.map(item => `
       <div class="cart-item">
-        <div class="cart-item-top"><h4>${item.emoji} ${item.name}</h4></div>
+        <div class="cart-item-top"><h4>${item.emoji} ${item.qty}x ${item.name}</h4></div>
         <div class="cart-item-dates">${item.code} · ${item.start} → ${item.end} · ${item.days} day${item.days>1?'s':''}</div>
         <div class="cart-item-bottom">
           <span class="item-price">R${item.lineTotal} <span style="color:var(--text-dim);font-weight:400">+R${item.deposit} dep.</span></span>
@@ -629,7 +664,7 @@ function checkoutWhatsApp(){
   const deliveryFee = fulfilment==="delivery" ? DELIVERY_FEE : 0;
   const grandTotal = subtotal + depositTotal + deliveryFee;
 
-  const lines = cart.map(i => `• ${i.name} (${i.code}) — ${i.start} to ${i.end}, ${i.days} day${i.days>1?'s':''} — R${i.lineTotal} + R${i.deposit} deposit`).join("\n");
+  const lines = cart.map(i => `• ${i.qty}x ${i.name} (${i.code}) — ${i.start} to ${i.end}, ${i.days} day${i.days>1?'s':''} — R${i.lineTotal} + R${i.deposit} deposit`).join("\n");
   const msg = `Hi Icreate! 👋\n\nI'd like to request a booking:\n\n${lines}\n\nFulfilment: ${fulfilment==="delivery" ? `Delivery (+R${DELIVERY_FEE})` : "Self pickup"}\n\n*Rental subtotal: R${subtotal.toLocaleString()}*\n*Deposit total (refundable): R${depositTotal.toLocaleString()}*\n*Delivery fee: R${deliveryFee}*\n*Total due: R${grandTotal.toLocaleString()}*\n\nPlease confirm availability and next steps. Thanks!`;
   window.open(`https://wa.me/${WA_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
 }
